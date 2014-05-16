@@ -73,9 +73,16 @@ namespace FodyEqualsFailExample
             var a = new SomeClass(5);
             var b = new SomeClass(5);
 
-            // Both lines should write 'true' on console  
+            // Both lines should write 'true' on console but they don't
             Console.WriteLine(a.Equals(b));
             Console.WriteLine(a == b);
+
+            var c = new AnotherAssembly.AnotherClass(5);
+            var d = new AnotherAssembly.AnotherClass(5);
+
+            // Both lines do write 'true' on console  
+            Console.WriteLine(c.Equals(d));
+            Console.WriteLine(c == d);
         }
     }
 }
